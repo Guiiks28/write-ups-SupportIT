@@ -10,5 +10,8 @@ Bienvenue sur mon dépôt de documentation et de résolutions d'incidents techni
 * **[Réparation des performances système (CPU & RAM)](./restauration-performances-systeme.md)**  
   * Procédure de diagnostic et de résolution d'une surcharge CPU/RAM à 100 % (exclusion antivirus, maintenance DISM/SFC et nettoyage des scripts `PING.EXE` parasites via `resmon`).
 
+* **[Gestion des disques et restauration de fichiers](./gestion-disques-et-restauration-fichiers.md)**  
+  * Procédure de réactivation de disques hors ligne via `diskmgmt.msc`, récupération de données personnelles et restauration des volumes à l'aide de l'outil `diskpart`.
+
 ## 👨‍💻 À propos
 Ce dépôt centralise mes retours d'expérience et mes procédures techniques dans le cadre de ma formation et de ma veille en infrastructure sécurisée.
