@@ -2,40 +2,35 @@
 
 ## 1. Contexte et Symptômes
 * **Problématique :** Utilisation anormale du processeur (CPU) et de la mémoire vive (RAM) à 100 %.
-* **Objectif :** Diagnostiquer la source de la surcharge matérielle, nettoyer l'image système et stopper les processus parasites.
+* **Objectif :** Diagnostiquer la source de la surcharge matérielle, nettoyer l'image système, éliminer les processus parasites et neutraliser les points de persistance au démarrage.
 
 ---
 
 ## 2. Chronologie des Opérations et Résolution
 
-### Étape 1 : Optimisation et exclusion de l'antivirus (CPU)
-* **Constat :** L'analyse de l'activité du processeur a révélé que l'antivirus surconsommait les ressources.
-* **Action :** Ajout d'une règle d'exclusion sur le lecteur système `C:` (disque de travail).
-* **Vérification :** Baisse immédiate et notable de la charge du processeur.
-
-### Étape 2 : Réparation et maintenance des composants Windows (DISM)
-Exécution des commandes de maintenance de l'image système :
-- Vérification de l'état des composants :
+### Étape 1 : Réparation et maintenance des composants Windows (DISM & SFC)
+Exécution des commandes de maintenance de l'image système et des fichiers :
+- Vérification et réparation de l'intégrité :
   `dism /online /cleanup-image /checkhealth`
-- Réparation des systèmes corrompus :
   `dism /online /cleanup-image /restorehealth`
-- Nettoyage des composants corrompus/obsolètes :
   `dism /online /cleanup-image /startcomponentcleanup`
-* **Vérification :** Restauration réussie du magasin de composants et nettoyage final du système.
-
-### Étape 3 : Analyse approfondie et arrêt des processus gourmands (RAM)
-* **Investigation détaillée :** Utilisation du raccourci `Win + R` pour lancer le Moniteur de ressources (`resmon`) afin d'identifier les processus consommant la mémoire vive.
-* **Action sur les scripts parasites :** Détection de multiples instances de la commande `PING.EXE` s'exécutant sous forme de scripts en arrière-plan. Arrêt forcé de ces processus avec la commande :
-  `taskkill /f /im PING.EXE`
-* **Vérification :** Disparition des scripts bloquants.
-
-### Étape 4 : Analyse des fichiers système (SFC)
-* **Action :** Lancement d'une vérification globale de l'intégrité des fichiers système via l'invite de commandes (DOS) :
+- Vérification globale des fichiers système via l'invite de commandes :
   `sfc /scannow`
-* **Vérification :** Validation et correction des fichiers système pour stabiliser l'utilisation de la RAM.
+
+### Étape 2 : Investigation avancée et neutralisation des processus parasites (RAM)
+* **Investigation détaillée :** Utilisation du raccourci `Win + R` pour lancer le Moniteur de ressources (`resmon`) afin d'analyser en profondeur l'activité de la mémoire.
+* **Constat critique :** Présence d'environ **500 instances** du processus `PING.EXE` s'exécutant en arrière-plan sous forme de scripts.
+* **Action corrective :** Arrêt forcé et massif des processus récurrents via l'invite de commandes :
+  `taskkill /f /im PING.EXE`
+
+### Étape 3 : Analyse des services et des programmes au démarrage (Persistance)
+* **Vérification des services :** Contrôle des services Windows (aucun dysfonctionnement majeur identifié).
+* **Analyse des programmes au démarrage :** Inspection des éléments lancés au démarrage du système, révélant plusieurs incohérences (exécutions automatiques de navigateurs et de scripts).
+* **Découverte majeure :** Dans la ligne de commande associée à une tâche de démarrage **PowerShell**, présence d'un script masqué programmé pour lancer une boucle de pings automatiques et infinis vers Google en arrière-plan à chaque démarrage.
+* **Résolution :** Désactivation des entrées incohérentes dans les programmes au démarrage et neutralisation de la persistance PowerShell.
 
 ---
 
 ## 3. Bilan et Résultat
 * **Statut de l'intervention :** Résolu avec succès.
-* **État final :** Le processeur et la RAM ont retrouvé des performances normales grâce à l'exclusion ciblée de l'antivirus, la maintenance DISM/SFC et l'élimination des scripts `PING.EXE` parasites.
+* **État final :** Le processeur et la RAM ont retrouvé des performances nominales grâce à la maintenance du système, l'éradication des 500 processus `PING.EXE` et le nettoyage des programmes mal configurés au démarrage.
