@@ -8,7 +8,7 @@ Bienvenue sur mon dépôt de documentation et de résolutions d'incidents techni
   * Procédure de dépannage d'un système Windows ne démarrant plus, utilisant l'ISO de récupération, `bootsect`, `bcdboot`, `diskpart` et la restauration de `winload.exe`.
 
 * **[Réparation des performances système (CPU & RAM)](./restauration-performances-systeme.md)**  
-  * Procédure de diagnostic et de résolution d'une surcharge CPU/RAM à 100 % (exclusion antivirus, maintenance DISM/SFC et nettoyage des scripts `PING.EXE` parasites via `resmon`).
+  * Procédure de diagnostic et de résolution d'une surcharge CPU/RAM à 100 % ( maintenance DISM/SFC et nettoyage des scripts `PING.EXE` parasites via `resmon`).
 
 * **[Gestion des disques et restauration de fichiers](./gestion-disques-et-restauration-fichiers.md)**  
   * Procédure d'analyse et de réparation du disque système via `chkdsk /f /r`, réactivation de disques hors ligne (`diskmgmt.msc`), récupération de données personnelles et gestion des volumes via `diskpart`.
