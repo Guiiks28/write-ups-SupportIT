@@ -11,7 +11,7 @@ Bienvenue sur mon dépôt de documentation et de résolutions d'incidents techni
   * Procédure de diagnostic et de résolution d'une surcharge CPU/RAM à 100 % (exclusion antivirus, maintenance DISM/SFC et nettoyage des scripts `PING.EXE` parasites via `resmon`).
 
 * **[Gestion des disques et restauration de fichiers](./gestion-disques-et-restauration-fichiers.md)**  
-  * Procédure de réactivation de disques hors ligne via `diskmgmt.msc`, récupération de données personnelles et restauration des volumes à l'aide de l'outil `diskpart`.
+  * Procédure d'analyse et de réparation du disque système via `chkdsk /f /r`, réactivation de disques hors ligne (`diskmgmt.msc`), récupération de données personnelles et gestion des volumes via `diskpart`.
 
 ## 👨‍💻 À propos
 Ce dépôt centralise mes retours d'expérience et mes procédures techniques dans le cadre de ma formation et de ma veille en infrastructure sécurisée.
