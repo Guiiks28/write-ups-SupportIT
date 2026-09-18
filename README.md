@@ -1,6 +1,6 @@
 # 🛠️ Infrastructure & Systèmes - Write-ups Techniques
 
-Bienvenue sur mon dépôt de documentation et de résolutions d'incidents techniques. Vous trouverez ici mes premiers pas, le suivi et la méthodologie de mes interventions en administration système, réseaux et support informatique.
+Bienvenue sur mon dépôt de documentation et de résolutions d'incidents techniques. Vous trouverez ici mes premiers pas, le suivi et la méthodologie de mes interventions en support informatique.
 
 ## 📂 Contenu du dépôt
 
